@@ -2,24 +2,30 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    z-index: 2;
 }
+
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
     width:5px;
 }
+
 /* 滚动槽 */
 ::-webkit-scrollbar-track {
     border-radius:10px;
 }
+
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
     border-radius:10px;
     background:#8C85E6;
     -webkit-box-shadow:#8C85E6;
 }
+
 ::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(175, 190, 255, 0.4);
 }
+
 /*按钮样式*/
 .btn-default-styles {
     outline: none;
@@ -57,11 +63,11 @@
     box-shadow: 0 2px 3px rgba(0, 0, 0, .2) inset;
 }
 
-
 .chatContainer{
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 2;
 }
 .chatBtn{
     width: 50px;
@@ -77,6 +83,7 @@
     bottom: 0;
     right: 0;
     overflow: hidden;
+    z-index: -1;
 }
 .chatBtn:hover{
     background: #01b3df;
@@ -85,6 +92,7 @@
 .chatBtn>i{
     font-size: 25px;
 }
+
 .chatBox{
     width: 370px;
     min-width: 320px;
@@ -93,12 +101,11 @@
     background: #f5ecff;
     position: absolute;
     bottom: 0;
-    right: 70px;
-
+    right: 0;
     overflow: hidden;
     border: solid 1px #d5d5d5;
     box-shadow: 1px 1px 2px #c0c0c0;
-    z-index: 1005;
+    z-index: 4;
 }
 .chatBox-head{
     width: 100%;
@@ -221,7 +228,6 @@
     height: 40px;
 }
 
-
 .chat-name{
     width: 230px;
 }
@@ -251,6 +257,7 @@
     color: #fff;
     background: #f46266;
     float: right;
+    z-index: 3;
 }
 .chat-message-num{
     display: inline-block;
@@ -271,18 +278,22 @@
     position: absolute;
     bottom: 40px;
     right: -24px;
+    z-index: 3;
 }
 .chatBox-kuang{
     width: 100%;
     height: 495px;
-    display: none;
+    display: inline-block;
+    z-index: 6;
 }
 .chatBox-content{
     width: 100%;
+    z-index: 6;
 }
 .chatBox-content-demo{
     width: 100%;
     overflow-y: scroll;
+    z-index: 6;
 }
 
 .clearfloat:after{
@@ -314,7 +325,6 @@
     display: inline-block;
     position: relative;
 }
-
 
 .clearfloat .left .chat-message{
     background: #D9D9D9;
@@ -371,7 +381,9 @@
 
 .chatBox-send{
     width: 100%;
-    padding: 10px 5px;
+    min-height: 30px;
+    max-height: 100px;
+    padding: 4px 4px;
     background: #eee;
     border-top: 1px #D0D0D0 solid;
     position: absolute;
@@ -379,11 +391,12 @@
     left: 0;
 }
 .div-textarea{
-    width: 260px;
-    min-height: 20px;
+    width: 200px;
+    min-height: 30px;
     max-height: 100px;
-    _height: 120px;
-    padding: 3px;
+    padding: 4px 4px;
+    margin-bottom: 2px;
+    margin-right: 2px;
     outline: 0;
     background: #fff;
     font-size: 14px;
@@ -405,16 +418,15 @@
     font-size: 0;
 }
 .chatBox-send>div button{
-    padding: 1px 5px;
-    margin-left: 3px;
+    padding: 4px 6px;
+    margin-left: 4px;
 }
 .chatBox-send>div label{
-    padding: 1px 5px;
-    margin-left: 3px;
+    padding: 4px 6px;
+    margin-left: 4px;
 }
 #chat-biaoqing{
     position: relative;
-
 }
 .hidden{
     display: none;

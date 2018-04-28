@@ -5,290 +5,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=drvice-width, initial-scale=1,height=device-height,maximum-scale=1,user-scalable=no;">
 	
 	<!--聊天CSS-->
 	<link rel="stylesheet" type="text/css" href="font_Icon/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="css/chat.css">
-	
-    <script src="js/jquery.min.js"></script>
+	<!--Live2d CSS-->
+	<link rel="stylesheet" type="text/css" href="css/live2d.css">
 	
     <style>
 		body {
-			font-family: LiSu;
+			font-family: 微软雅黑;
 			cursor: url('./assets/cursor.cur'),auto!important;
-        }
-        .waifu {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            position: relative;
-            bottom: 0;
-            left: 0;
-            z-index: 1;
-            font-size: 0;
-            transition: all .3s ease-in-out;
-            -webkit-transform: translateY(3px);
-            transform: translateY(3px);
-        }
-        .waifu:hover {
-            -webkit-transform: translateY(0);
-            transform: translateY(0);
-        }
-        @media (max-width: 100px) {
-            .waifu {
-                display: none;
-            }
-        }
-        .waifu-tips {
-            opacity: 0;
-            width: 250px;
-            height: 70px;
-            margin: -20px 20px;
-            padding: 5px 10px;
-            border: 1px solid rgba(224, 186, 140, 0.62);
-            border-radius: 12px;
-            background-color: rgba(236, 217, 188, 0.5);
-            box-shadow: 0 3px 15px 2px rgba(191, 158, 118, 0.2);
-            font-size: 12px;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            position: absolute;
-            animation-delay: 5s;
-            animation-duration: 50s;
-            animation-iteration-count: infinite;
-            animation-name: shake;
-            animation-timing-function: ease-in-out;
-        }
-        .waifu #live2d{
-            position: relative;
-        }
-
-        @keyframes shake {
-            2% {
-                transform: translate(0.5px, -1.5px) rotate(-0.5deg);
-            }
-
-            4% {
-                transform: translate(0.5px, 1.5px) rotate(1.5deg);
-            }
-
-            6% {
-                transform: translate(1.5px, 1.5px) rotate(1.5deg);
-            }
-
-            8% {
-                transform: translate(2.5px, 1.5px) rotate(0.5deg);
-            }
-
-            10% {
-                transform: translate(0.5px, 2.5px) rotate(0.5deg);
-            }
-
-            12% {
-                transform: translate(1.5px, 1.5px) rotate(0.5deg);
-            }
-
-            14% {
-                transform: translate(0.5px, 0.5px) rotate(0.5deg);
-            }
-
-            16% {
-                transform: translate(-1.5px, -0.5px) rotate(1.5deg);
-            }
-
-            18% {
-                transform: translate(0.5px, 0.5px) rotate(1.5deg);
-            }
-
-            20% {
-                transform: translate(2.5px, 2.5px) rotate(1.5deg);
-            }
-
-            22% {
-                transform: translate(0.5px, -1.5px) rotate(1.5deg);
-            }
-
-            24% {
-                transform: translate(-1.5px, 1.5px) rotate(-0.5deg);
-            }
-
-            26% {
-                transform: translate(1.5px, 0.5px) rotate(1.5deg);
-            }
-
-            28% {
-                transform: translate(-0.5px, -0.5px) rotate(-0.5deg);
-            }
-
-            30% {
-                transform: translate(1.5px, -0.5px) rotate(-0.5deg);
-            }
-
-            32% {
-                transform: translate(2.5px, -1.5px) rotate(1.5deg);
-            }
-
-            34% {
-                transform: translate(2.5px, 2.5px) rotate(-0.5deg);
-            }
-
-            36% {
-                transform: translate(0.5px, -1.5px) rotate(0.5deg);
-            }
-
-            38% {
-                transform: translate(2.5px, -0.5px) rotate(-0.5deg);
-            }
-
-            40% {
-                transform: translate(-0.5px, 2.5px) rotate(0.5deg);
-            }
-
-            42% {
-                transform: translate(-1.5px, 2.5px) rotate(0.5deg);
-            }
-
-            44% {
-                transform: translate(-1.5px, 1.5px) rotate(0.5deg);
-            }
-
-            46% {
-                transform: translate(1.5px, -0.5px) rotate(-0.5deg);
-            }
-
-            48% {
-                transform: translate(2.5px, -0.5px) rotate(0.5deg);
-            }
-
-            50% {
-                transform: translate(-1.5px, 1.5px) rotate(0.5deg);
-            }
-
-            52% {
-                transform: translate(-0.5px, 1.5px) rotate(0.5deg);
-            }
-
-            54% {
-                transform: translate(-1.5px, 1.5px) rotate(0.5deg);
-            }
-
-            56% {
-                transform: translate(0.5px, 2.5px) rotate(1.5deg);
-            }
-
-            58% {
-                transform: translate(2.5px, 2.5px) rotate(0.5deg);
-            }
-
-            60% {
-                transform: translate(2.5px, -1.5px) rotate(1.5deg);
-            }
-
-            62% {
-                transform: translate(-1.5px, 0.5px) rotate(1.5deg);
-            }
-
-            64% {
-                transform: translate(-1.5px, 1.5px) rotate(1.5deg);
-            }
-
-            66% {
-                transform: translate(0.5px, 2.5px) rotate(1.5deg);
-            }
-
-            68% {
-                transform: translate(2.5px, -1.5px) rotate(1.5deg);
-            }
-
-            70% {
-                transform: translate(2.5px, 2.5px) rotate(0.5deg);
-            }
-
-            72% {
-                transform: translate(-0.5px, -1.5px) rotate(1.5deg);
-            }
-
-            74% {
-                transform: translate(-1.5px, 2.5px) rotate(1.5deg);
-            }
-
-            76% {
-                transform: translate(-1.5px, 2.5px) rotate(1.5deg);
-            }
-
-            78% {
-                transform: translate(-1.5px, 2.5px) rotate(0.5deg);
-            }
-
-            80% {
-                transform: translate(-1.5px, 0.5px) rotate(-0.5deg);
-            }
-
-            82% {
-                transform: translate(-1.5px, 0.5px) rotate(-0.5deg);
-            }
-
-            84% {
-                transform: translate(-0.5px, 0.5px) rotate(1.5deg);
-            }
-
-            86% {
-                transform: translate(2.5px, 1.5px) rotate(0.5deg);
-            }
-
-            88% {
-                transform: translate(-1.5px, 0.5px) rotate(1.5deg);
-            }
-
-            90% {
-                transform: translate(-1.5px, -0.5px) rotate(-0.5deg);
-            }
-
-            92% {
-                transform: translate(-1.5px, -1.5px) rotate(1.5deg);
-            }
-
-            94% {
-                transform: translate(0.5px, 0.5px) rotate(-0.5deg);
-            }
-
-            96% {
-                transform: translate(2.5px, -0.5px) rotate(-0.5deg);
-            }
-
-            98% {
-                transform: translate(-1.5px, -1.5px) rotate(-0.5deg);
-            }
-
-            0%, 100% {
-                transform: translate(0, 0) rotate(0);
-            }
         }
     </style>
 </head>
 
 <body>
-
 <div>
 	<h1 style="font-family:verdana">Live2d</h1>
 	<h1>全局字体</h1>
 </div>
 
-<div class="waifu">
-    <div class="waifu-tips"></div>
-    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-</div>
-<script type="text/javascript" src="./device.min.js"></script>
-
-
 <div class="chatContainer">
-    
 	<div class="chatBtn">
         <i class="iconfont icon-xiaoxi1"></i>
     </div>
-	<div class="chat-message-num">10</div>
-    
 	
 	<div class="chatBox" ref="chatBox" style="display: none;">
         <div class="chatBox-head">
@@ -308,96 +50,10 @@
             </div>
         </div>
         <div class="chatBox-info">
-            <div class="chatBox-list" ref="chatBoxlist">
-                <div class="chat-list-people">
-                    <div><img src="img/icon01.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>自酌一杯酒</p>
-                    </div>
-                    <div class="message-num">10</div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon02.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>白兰地</p>
-                    </div>
-                    <div class="message-num">8</div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon03.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>威士忌</p>
-                    </div>
-                    <div class="message-num">2</div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon01.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>荷兰金酒</p>
-                    </div>
-                    <div class="message-num">20</div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon03.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>朗姆酒</p>
-                    </div>
-                    <div class="message-num">10</div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon02.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>特其拉酒</p>
-                    </div>
-                    <div class="message-num">18</div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon02.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>鸡尾酒</p>
-                    </div>
-                    <div class="message-num">9</div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon01.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>虎骨酒</p>
-                    </div>
-                    <div class="message-num">12</div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon01.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>琴酒</p>
-                    </div>
-                    <div class="message-num">99+</div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon02.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>葡萄酒</p>
-                    </div>
-                    <div class="message-num"></div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon01.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>蓝莓酒</p>
-                    </div>
-                    <div class="message-num"></div>
-                </div>
-                <div class="chat-list-people">
-                    <div><img src="img/icon03.png" alt="头像"></div>
-                    <div class="chat-name">
-                        <p>樱花酒</p>
-                    </div>
-                    <div class="message-num"></div>
-                </div>
-            </div>
             <div class="chatBox-kuang" ref="chatBoxkuang">
                 <div class="chatBox-content">
+					<!--聊天内容式例-->
                     <div class="chatBox-content-demo" id="chatBox-content-demo">
-
                         <div class="clearfloat">
                             <div class="author-name">
                                 <small class="chat-date">2017-12-02 14:26:58</small>
@@ -409,7 +65,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="clearfloat">
                             <div class="author-name">
                                 <small class="chat-date">2017-12-02 14:26:58</small>
@@ -421,7 +76,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="clearfloat">
                             <div class="author-name">
                                 <small class="chat-date">2017-12-02 14:26:58</small>
@@ -445,7 +99,8 @@
                                    name="file" id="inputImage" class="hidden">
                             <i class="iconfont icon-tuxiang"></i>
                         </label>
-                        <button id="chat-fasong" class="btn-default-styles"><i class="iconfont icon-fasong"></i>
+                        <button id="chat-fasong" class="btn-default-styles">
+							<i class="iconfont icon-fasong"></i>
                         </button>
                     </div>
                     <div class="biaoqing-photo">
@@ -471,21 +126,15 @@
                             <li><span class="emoji-picker-image" style="background-position: -9px -120px;"></span></li>
                             <li><span class="emoji-picker-image" style="background-position: -40px -120px;"></span></li>
                             <li><span class="emoji-picker-image" style="background-position: -71px -120px;"></span></li>
-                            <li><span class="emoji-picker-image" style="background-position: -102px -120px;"></span>
-                            </li>
-                            <li><span class="emoji-picker-image" style="background-position: -133px -120px;"></span>
-                            </li>
-                            <li><span class="emoji-picker-image" style="background-position: -164px -120px;"></span>
-                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -120px;"></span></li>
                             <li><span class="emoji-picker-image" style="background-position: -9px -154px;"></span></li>
                             <li><span class="emoji-picker-image" style="background-position: -40px -154px;"></span></li>
                             <li><span class="emoji-picker-image" style="background-position: -71px -154px;"></span></li>
-                            <li><span class="emoji-picker-image" style="background-position: -102px -154px;"></span>
-                            </li>
-                            <li><span class="emoji-picker-image" style="background-position: -133px -154px;"></span>
-                            </li>
-                            <li><span class="emoji-picker-image" style="background-position: -164px -154px;"></span>
-                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -154px;"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -494,13 +143,19 @@
     </div>
 </div>
 
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+	<div class="hide-button" style="display: none;">隐藏</div>
+</div>
 
 <script src="js/jquery.min.js"></script>
+<!--<script src="./device.min.js"></script>-->
+<script async src="./waifu-tips.js"></script>
+<script src="./lib/live2d.js"></script>
 <script>
     screenFuc();
-	
     function screenFuc() {
-		console.log("screenFuc");
         var topHeight = $(".chatBox-head").innerHeight();//聊天头部高度
         //屏幕小于768px时候,布局change
         var winWidth = $(window).innerWidth();
@@ -511,44 +166,29 @@
             //中间内容高度
             $(".chatBox-content").css("height", infoHeight - 46);
             $(".chatBox-content-demo").css("height", infoHeight - 46);
-
-            $(".chatBox-list").css("height", totalHeight - topHeight);
             $(".chatBox-kuang").css("height", totalHeight - topHeight);
             $(".div-textarea").css("width", winWidth - 106);
         } else {
-            $(".chatBox-info").css("height", 495);
             $(".chatBox-content").css("height", 448);
             $(".chatBox-content-demo").css("height", 448);
-            $(".chatBox-list").css("height", 495);
             $(".chatBox-kuang").css("height", 495);
             $(".div-textarea").css("width", 260);
         }
     }
 	
-	(window.onload = function () {
-		//$(".chatBox").toggle(0);
-		//console.log("onload"); //2遍
-    })();
-	
-	//载入时
-	(window.load = function () {
-		//$(".chatBox").toggle(0);
-		//console.log("load"); //1遍
-		//$(".chatBox").toggle(10);
-    })();
-	
-	//视窗变化时，最大化/还原/拖动
-    (window.onresize = function () {
-		//console.log("onresize");
-        //screenFuc();
-    })();
+	//点击输入框时，上移整个window
+	$(function() {
+		$('.div-textarea').on('click', function () {
+			//console.log("input:" + $("#chatBox-content-demo")[0].scrollHeight);
+			$(window).scrollTop($("#chatBox-content-demo")[0].scrollHeight); // 调整value
+		});
+	})
 	
     //未读信息数量为空时
     var totalNum = $(".chat-message-num").html();
     if (totalNum == "") {
         $(".chat-message-num").css("padding", 0);
     }
-	
     $(".message-num").each(function () {
         var wdNum = $(this).html();
         if (wdNum == "") {
@@ -559,42 +199,13 @@
     //打开/关闭聊天框
     $(".chatBtn").click(function () {
         $(".chatBox").toggle(10);
-    })
-	
+		//$(".chatBtn").hide();
+    });
     $(".chat-close").click(function () {
         $(".chatBox").toggle(10);
-    })
+		//$(".chatBtn").show();
+    });
 	
-    //进聊天页面
-    $(".chat-list-people").each(function () {
-        $(this).click(function () {
-            var n = $(this).index();
-            $(".chatBox-head-one").toggle();
-            $(".chatBox-head-two").toggle();
-            $(".chatBox-list").fadeToggle();
-            $(".chatBox-kuang").fadeToggle();
-
-            //传名字
-            $(".ChatInfoName").text($(this).children(".chat-name").children("p").eq(0).html());
-
-            //传头像
-            $(".ChatInfoHead>img").attr("src", $(this).children().eq(0).children("img").attr("src"));
-
-            //聊天框默认最底部
-            $(document).ready(function () {
-                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
-            });
-        })
-    });
-
-    //返回列表
-    $(".chat-return").click(function () {
-        $(".chatBox-head-one").toggle(1);
-        $(".chatBox-head-two").toggle(1);
-        $(".chatBox-list").fadeToggle(1);
-        $(".chatBox-kuang").fadeToggle(1);
-    });
-
     //发送信息
     $("#chat-fasong").click(function () {
         var textContent = $(".div-textarea").html().replace(/[\n\r]/g, '<br>')
@@ -606,6 +217,7 @@
             //发送后清空输入框
             $(".div-textarea").html("");
             //聊天框默认最底部
+			console.log("send:" + $("#chatBox-content-demo")[0].scrollHeight);
             $(document).ready(function () {
                 $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
             });
@@ -622,7 +234,6 @@
     $("#chat-biaoqing").click(function (event) {
         event.stopPropagation();//阻止事件
     });
-
     $(".emoji-picker-image").each(function () {
         $(this).click(function () {
             var bq = $(this).parent().html();
@@ -659,21 +270,30 @@
         };
         reader.readAsDataURL(pic.files[0]);
     }
-</script>
 
-
-
-
-
-<script async src="./waifu-tips.js"></script>
-<script src="./lib/live2d.js"></script>
-<script>
+	//Live2d
 	$(function () {
 		$(document).ready(function () {
 			loadlive2d("live2d", "./assets/pio/pio.model.json", 0.5);
 		})
 	})
+	
+	//自定义hover
+	initLive2d ();
+	function initLive2d (){
+		//悬停，移动端需要点击
+		$('.waifu').hover(
+			() => {$('.hide-button').fadeIn(600);},
+			() => {$('.hide-button').fadeOut(600)}
+		);
+		//隐藏
+		$('.hide-button').fadeOut(0).on('click',()=>{
+			$('.waifu').css('display','none');
+		});
+	}
+	
 </script>
+
 </body>
+
 </html>
-<!-- loadlive2d("live2dcanvas", "../assets/name/name.model.json", 0.5); -->
